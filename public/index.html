@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5N9LQHQ');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Play all-new online Bingo game with your friends and people around the world.">
+    <meta name="keywords" content="Bingo, bingo, game, minigame, mpl, online, friends, fun, win, score">
+    <meta name="author" content="Likhith @Li-Bros">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/bingo-icon.png">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Bingo</title>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5N9LQHQ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="loader">
+        <div class="loadarea">
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <div class="b3"></div>
+            <div class="b4"></div>
+            <div class="b5"></div>
+        </div>
+        <div class="loadtxt">loading</div>
+        <button class="cancel hide" onclick="loader.onClick()">cancel</button>
+    </div>
+
+    <div class="howto hide">
+        <div class="howtobox" onclick="document.querySelector('.howto').classList.add('hide')"> </div>
+        <div class="howtocontent">
+            <div class="head">How to play?</div>
+            <ol>
+                <li>Enter username and click on <b>play</b>.</li>
+                <li>Now, fill the box either manually or use <b>Randomize</b>. Use <b>Reset</b> to empty
+                    the box incase you want to fill it again. Once the box is filled, you are good to go.</li>
+                <li>Share <b>My Id</b> with friends, so they can send request to you and play together.</li>
+                <li>Type others' Id and click <b>Join</b> to send request.</li>
+                <li>Click on <b>Match</b> to play with a random player online. You may have to wait until any player is available.</li>
+                <br>
+                <li>In a match, mark your number within the time. If time runs out, game marks a random number on your behalf.</li>
+                <li>Completion of a row, column or a diagonal provides <b>one point</b>. Score <b>five</b> points to win.</li>
+                <li>Click on <b>Leave</b> button to exit from match, after finish.</li>
+                <li>Click on <b>Play Again</b> button to play again. You need to fill box after the click and then click again to join the match. Button will disappear if player has left the match.</li>
+            </ol>
+            <button onclick="document.querySelector('.howto').classList.add('hide')">close</button>
+            <br> <small>Made by Li-Bros</small>
+        </div>
+    </div>
+
+    <nav>
+        <div class="heading">Bingo</div>
+        <div class="howtoplay" onclick="document.querySelector('.howto').classList.remove('hide')">?</div>
+    </nav>
+
+    <div class="grid template">
+        <div class="left">
+            <div class="notification">
+                
+            </div>
+            <div class="box">
+                
+            </div>
+            <div class="refbox">
+                <div class="displaybox hide">
+                    <div class="turn refsub">Your Turn</div>
+                    <div class="timer refsub">10 sec</div>
+                </div>
+                <div class="nums">
+
+                </div>
+            </div>
+            <div class="opponentName"></div>
+            <button class="autofill" onclick="autoFill()">randomize</button><button
+             class="resetbox" onclick="resetBox()">reset</button>
+        </div>
+        <div class="right">
+            <form class="contform hide playform" id="screen0">
+                <input type="text" name="name" id="name" class="txtfield" autocomplete="off" placeholder="username" required>
+                <input type="submit" value="play" class="submit1">
+            </form>
+
+            <div class="contform hide" id="screen1">
+                <div class="myId"></div>
+                <button class="submit1" onclick="match()">match</button>
+                <br><br>or<br><br>
+                <form class="joinform">
+                    <input type="text" name="joinId" id="joinId" class="txtfield" autocomplete="off" placeholder="id" required>
+                <input type="submit" value="join" class="submit1">
+                </form>
+                <div class="myName">logged in as -----</div>
+                <div class="reqbox">
+                    
+                </div>
+            </div>
+            <div class="contform hide" id="screen2">
+                <div class="score">4</div>
+                <div class="bingo">
+                    <span class="mark">B</span>
+                    <span class="mark">I</span>
+                    <span class="mark">N</span>
+                    <span class="mark">G</span>
+                    <span>O</span>
+                </div>
+                <div class="wins"><span class="you">5</span>:<span class="opp">6</span></div>
+                <div class="gamestatus">Wow!<br>You Won</div>
+            </div>
+            <button class="leave hide" onclick="leaveButton.onClick()">LEAVE</button>
+            <button class="playagain hide" onclick="playAgainButton.onClick()">PLAY AGAIN</button>
+        </div>
+    </div>
+
+<div class="disconnect hide">
+    <div class="heading errmsg">Connection Lost</div>
+    <div><small>It could be due to unstable internet connection</small></div>
+    <button class="no err" onclick="window.location.reload()">click here to refresh</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="/scripts/socketManager.js"></script>
+<script src="/scripts/reqHandler.js"></script>
+<script src="/scripts/script.js"></script>
+</body>
+</html>

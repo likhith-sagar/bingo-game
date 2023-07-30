@@ -1,0 +1,500 @@
+html{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    padding: 60px 0px 10px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    background: #eee;
+}
+body *{
+    color: #444;
+}
+nav{
+    position: fixed;
+    top: 0px; left: 0px;
+    width: 100%;
+    text-align: center;
+    background: #FAE26C;
+    box-shadow: 0px 0px 5px 0px #a99977;
+    z-index: 100;
+}
+.heading{
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.howtoplay{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0px;
+    top: 0px; bottom: 0px;
+    margin: auto 15px;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(252, 249, 82);
+    text-shadow: 0px 0px 4px #776;
+    cursor: pointer;
+
+}
+.howto{
+    animation: appear 0.1s linear 0s 1 normal;
+    z-index: 100;
+}
+.howtobox{
+    position: fixed;
+    top: 0px; left: 0px;
+    width: 100%; height: 100%;
+    background: rgba(204, 204, 164, 0.384);
+    z-index: 100;
+}
+.howtocontent{
+    position: absolute;
+    top: 15%;
+    left: 0px; right: 0px;
+    margin: auto;
+    text-align: center;
+    background: #fcfcfa;
+    width: 90%;
+    max-width: 600px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: left;
+    z-index: 100;
+    padding-right: 10px;
+    font-size: 15px;
+    box-shadow: 0px 0px 10px 0px #999;
+}
+.howtocontent .head{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 5px;
+}
+.howtocontent li{
+    padding: 4px;
+}
+b{
+    font-weight: 700;
+}
+.howtocontent button{
+    padding: 8px 10px;
+    background: #fcfcfa;
+    float: right;
+}
+.grid{
+    display: grid;
+    background: #ddd;
+    grid-gap: 3px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.grid *{
+    background: #eee;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+}
+.template{
+    grid-template-areas: 
+    "left"
+    "right";
+}
+.numbox{
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    min-width: 35px;
+    max-width: 70px;
+    height: 40px;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    background: #fefefe;
+    margin: auto 0px;
+    animation: btnpop 0.2s linear 0s 1 normal;
+    cursor: pointer;
+    user-select: none;
+}
+.refbox{
+    position: relative;
+    text-align: left;
+    margin: 5px auto;
+    min-width: 200px;
+    width: 70vw;
+    min-height: 60px;
+    background: #ddd;
+    /* height: 60px; */
+    padding: 5px;
+    border-radius: 5px;
+}
+@media screen and (min-width:700px){
+    .template{
+        grid-template-areas: 
+        "left left right";
+    }
+    .numbox{
+        position: relative;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        width: 70px;
+        height: 40px;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 10px;
+        background: #fefefe;
+        animation: btnpop 0.2s linear 0s 1 normal;
+        cursor: pointer;
+        user-select: none;
+    }
+    .refbox{
+        position: relative;
+        text-align: left;
+        margin: 5px auto;
+        min-width: 200px;
+        width: 60vw;
+        min-height: 60px;
+        background: #ddd;
+        /* height: 60px; */
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+.left{
+    grid-area: left;
+}
+.right{
+    grid-area: right;
+    position: relative;
+    padding: 2px;
+}
+.box{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(30px,60px);
+    grid-gap: 5px;
+    text-align: center;
+    margin: 5px auto;
+    min-width: 200px;
+    max-width: 460px;
+    background: #ddd;
+    min-height: 320px;
+    border-radius: 5px;
+}
+.refnumbox{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 20px;
+    height: 40px;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin: 1px;
+    background: #fefefe;
+    cursor: pointer;
+    user-select: none;
+}
+button{
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px 0px #aaa;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.autofill{
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+.marked{
+    background: #FCC715;
+    text-decoration: line-through;
+}
+.contform{
+    display: block;
+    background: #dedede;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 300px;
+    color: #555;
+}
+.txtfield{
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px 0px #aaa;
+    border-radius: 5px;
+    margin: 5px auto;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+.submit1{
+    border: none;
+    outline: none;
+    width: 80%;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #fff;
+    background: #fcb315;
+    box-shadow: 0px 0px 5px 0px #aaa;
+}
+.myId{
+    /* display: inline; */
+    margin: 5px;
+    border-radius: 10px;
+}
+.myName{
+    background: transparent;
+    color: rgba(150,150,150,0.5);
+    font-size: smaller;
+    padding: 5px;
+}
+.hide{
+    display: none !important;
+}
+.joinform{
+    border-radius: 5px;
+    background: #d1d1d1;
+    margin: 2px auto;
+}
+.reqbox{
+    border-radius: 10px;
+    padding: 0px;
+}
+.req{
+    border-radius: 10px;
+}
+.yes{
+    background: #4bb543;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+.no{
+    background: #d11a2a;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+.notification{
+    display: flex;
+    height: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.errmsg{
+    color: crimson;
+    font-weight: 600;
+}
+.sucmsg{
+    color: #62da00;
+    font-weight: 600;
+    /* text-shadow: 0px 0px 1px; */
+}
+.displaybox{
+    display: grid;
+    background: transparent;
+    grid-template-columns: 1fr 1fr;
+}
+.refsub{
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.turn{
+    font-size: 22px;
+    font-weight: 600;
+    background: #fff59f;
+    border-radius: 10px;
+}
+.timer{
+    font-weight: 700;
+    font-size: 30px;
+}
+.nums{
+    background: transparent;
+    text-align: left;
+    padding: 0px;
+}
+.score{
+    background: transparent;
+    font-size: 60px;
+    font-weight: 500;
+}
+.bingo{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+.bingo >*{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin: 5px auto;
+}
+.gamestatus{
+    font-size: 45px;
+    font-weight: 500;
+    margin: 30px auto 10px auto;
+    border-radius: 10px;
+}
+
+@keyframes btnpop{
+    0%{
+        transform: scale(0.2);
+    }
+    70%{
+        transform: scale(1.15);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.unvisible{
+    visibility: hidden;
+}
+.mark{
+    text-decoration: line-through;
+    background: #6b5413;
+    color: linen;
+    text-shadow: 0px 0px 2px #776;
+}
+.leave{
+    background: crimson;
+    font-size: 15px;
+    font-weight: 500;
+    color: linen;
+    padding: 8px 24px;
+}
+
+.loader{
+    position: fixed;
+    display: flex;
+    top: 0px; left: 0px;
+    width: 100%; height: 100%;
+    background: rgba(128, 129, 79, 0.5);
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.loadarea >*{
+    width: 10px;
+    height: 10px;
+    background: #ffd54b;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 1px #9b8e16;
+}
+.loadarea{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.loadarea .b1{
+    animation: loading 1s linear 0s infinite normal;
+}
+.loadarea .b2{
+    animation: loading 1s linear 0.2s infinite normal;
+}
+.loadarea .b3{
+    animation: loading 1s linear 0.4s infinite normal;
+}
+.loadarea .b4{
+    animation: loading 1s linear 0.6s infinite normal;
+}
+.loadarea .b5{
+    animation: loading 1s linear 0.8s infinite normal;
+}
+.loadtxt{
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff4ce;
+    text-shadow: 0px 0px 2px #ffbc02;
+}
+.cancel{
+    padding: 6px 20px;
+    margin: 30px auto;
+    font-size: 15px;
+    font-weight: 600;
+    color: linen;
+    background: rgba(255, 139, 139, 0.877);
+    border:solid 2px rgb(220, 207, 20);
+    box-shadow: 0px 0px 6px 0px #888;
+}
+.opponentName{
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+    padding: 0px;
+    margin: 5px auto;
+}
+
+@keyframes loading{
+    0%{
+        height: 10px;
+    }
+    50%{
+        height: 30px;
+    }
+    100%{
+        height: 10px;
+    }
+}
+@keyframes appear{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.wins , .wins >*{
+    background: rgb(133, 133, 133);
+    color: linen;
+    font-weight: 500;
+}
+.wins >*{
+    text-align: center;
+    padding: 4px 20px;
+    font-size: 16px;
+}
+.playagain{
+    background: limegreen;
+    font-size: 15px;
+    font-weight: 500;
+    color: linen;
+    padding: 8px 10px;
+}
+.disconnect{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    left: 0px; top: 0px;
+    width: 100%; height: 100%;
+    z-index: 200;
+    background: rgba(254, 255, 208, 0.534);
+}
